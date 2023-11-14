@@ -1,12 +1,12 @@
 
 <template>
   <v-app id="inspire">
-    <SidebarComp/>
+    <Dashboard />
   </v-app>
 
-<ContentModalComp ref="ContentModal"/>
-<LoaderComp ref="Loader"></LoaderComp>
-<NotifyComp ref="Notify"></NotifyComp>
+  <ContentModalComp ref="ContentModal" />
+  <LoaderComp ref="Loader"></LoaderComp>
+  <NotifyComp ref="Notify"></NotifyComp>
 </template>
 
 <!-- <script setup>
@@ -20,15 +20,18 @@ import ContentModalComp from './components/ContentModalComp.vue';
 import LoaderComp from './components/LoaderComp.vue';
 import NotifyComp from './components/NotifyComp.vue';
 import SidebarComp from './components/SidebarComp.vue';
+import Dashboard from './views/Dashboard.vue';
+import HomeView from './views/HomeView.vue';
 
-export default{
+export default {
   components: {
     ContentModalComp,
-    SidebarComp,
+    // SidebarComp,
     LoaderComp,
-    NotifyComp
-},
-  mounted(){
+    NotifyComp,
+    Dashboard
+  },
+  mounted() {
     if (this.$root !== null) {
       this.$root.ContentModal = this.$refs.ContentModal;
       this.$root.Loader = this.$refs.Loader;

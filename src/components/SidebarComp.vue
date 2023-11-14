@@ -1,5 +1,5 @@
 <template>
-  <NavigationComp v-model="drawer" @contactemit="toggleContactDialog" />
+  <!-- <NavigationComp v-model="drawer" @contactemit="toggleContactDialog" />
 
   <sidebar-right-comp v-model="drawerRight" @itememit="getItemId"/>
 
@@ -26,7 +26,7 @@
 
     </v-container>
   </v-main>
-  <footer-comp />
+  <footer-comp /> -->
 
   <ContactmeComp ref="contactMeDialog"></ContactmeComp>
 </template>
@@ -48,8 +48,8 @@ export default {
     };
   },
   components: {
-    SidebarRightComp, FooterComp, ContactmeComp,
-    NavigationComp,
+    // SidebarRightComp, FooterComp, ContactmeComp,
+    // NavigationComp,
   },
   methods: {
 

@@ -19,7 +19,7 @@
                     height="auto">
                     <v-icon class="mb-5" color="#2D2424" icon="mdi-notebook-plus" size="85"></v-icon>
                     <v-chip-group variant="tonal" mandatory color="blue">
-                        <v-chip v-for="tag in tags" :key="tag" :item-id="tag.id" @click="chipClick(tag.id)">
+                        <v-chip v-for="tag in tags" :key="tag" @click="chipClick(tag.id)" :item-id="tag.id">
                             {{ tag.articleName }}
                         </v-chip>
                     </v-chip-group>
@@ -38,6 +38,7 @@
     </v-card> -->
 </template>
 
+<!--   :to="'/article/' + tag.id"-->
 <script>
 import httpService from '@/services/httpService';
 
@@ -59,14 +60,12 @@ export default {
     },
     methods: {
         contactMeClk() {
-            // this.contactDialog = true;
-            // this.$emit('contactemit', this.contactDialog);
             this.$root.ContentModal.toggle({
                 isActive: true,
                 content: `<h3>Send Me Email!</h3><br><small>srhnfrkn75@gmail.com</small>`
             });
         },
-        async chipClick(itemId) {
+        chipClick(itemId) {
            this.$router.push({name: 'article', params: { itemId }});
         }
     }

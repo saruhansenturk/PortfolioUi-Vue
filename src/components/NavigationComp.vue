@@ -2,7 +2,7 @@
     <v-navigation-drawer v-model="drawer" style="background-color: #2D2424">
         <v-hover>
             <template v-slot:default="{ isHovering, props }">
-                <v-card class="rounded-xl" v-bind="props" :elevation="isHovering ? 24 : 5">
+                <v-card class="rounded-xl" v-bind="props" :elevation="isHovering ? 24 : 5" to="/">
                     <v-img :src="require('../assets/ben.jpeg')" cover height="180"></v-img>
 
                     <v-card-text class="card-font">Saruhan Furkan Şentürk</v-card-text>

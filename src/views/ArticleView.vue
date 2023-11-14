@@ -8,26 +8,21 @@
 import httpService from '@/services/httpService';
 export default {
     components: {},
-    props: {
-        itemId: String
-    },
     data() {
         return {
-            content: "", 
+            content: "",
         };
     },
-    created(){
+    mounted() {
         this.loadArticle(this.$route.params.itemId);
     },
-    watch: {
-        '$route.params.itemId'(newItemId, oldItemId) {
-            // Route parametresi değiştiği nde  bu kısım çalışır
-            this.loadArticle(newItemId);
-        }
+    beforeRouteUpdate(to, from) {
+        console.log(to.params.itemId);
+        this.loadArticle(to.params.itemId);
     },
     methods: {
         async loadArticle(id) {
-            if (id !==  undefined) {
+            if (id !== undefined) {
                 var response = await httpService.get(`https://localhost:7280/api/Articles`, null, { id: id });
                 this.content = response.data.data.introduction;
             }
