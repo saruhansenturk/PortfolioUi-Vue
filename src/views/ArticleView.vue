@@ -21,7 +21,7 @@ export default {
     },
     watch: {
         '$route.params.itemId'(newItemId, oldItemId) {
-            // Route parametresi değiştiğinde  bu kısım çalışır
+            // Route parametresi değiştiği nde  bu kısım çalışır
             this.loadArticle(newItemId);
         }
     },
