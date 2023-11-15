@@ -26,7 +26,6 @@
                         </v-responsive>
 
                     </v-card>
-
                 </v-hover>
             </v-col>
         </v-row>
@@ -106,9 +105,7 @@ export default {
     mounted() { },
 };
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>
 <!-- .card-area{
     min-width: 10%;
 } -->
