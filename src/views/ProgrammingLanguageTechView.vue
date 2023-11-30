@@ -64,7 +64,7 @@ export default {
 
         await httpService.get(`https://localhost:7280/api/ProgrammingLangTechs/GetProgrammingTechUi`, null, { skip: this.skipParam, take: this.takeParam }).then(serviceResponse => {
             this.pageCount = serviceResponse.data.totalCount % this.takeParam > 0 ? (serviceResponse.data.totalCount / this.takeParam) + 1 : serviceResponse.data.totalCount / this.takeParam;
-            this.items = serviceResponse.data.data;
+            this.items = serviceResponse?.data?.data;
         }).catch(err => {
             this.$root.Notify.show({
                 delay: 3000,

@@ -5,22 +5,22 @@
                 <v-hover v-slot="{ isHovering, props }">
                     <v-card class="mx-auto" max-width="300" min-width="200" :elevation="isHovering ? 24 : 2" v-bind="props">
                         <v-responsive>
-                            <v-img class="align-end text-white" height="200" :src="item.languageImg" cover>
+                            <v-img class="align-end text-white" height="200" :src="item?.languageImg" cover>
                             </v-img>
                             <v-card-title>
                                 <v-chip color="green">
-                                    {{ item.level }}
+                                    {{ item?.level }}
                                 </v-chip>
 
                             </v-card-title>
 
                             <v-card-subtitle class="pt-4">
-                                {{ item.name }}
+                                {{ item?.name }}
                             </v-card-subtitle>
 
 
                             <v-card-text>
-                                <div>{{ item.description }}</div>
+                                <div>{{ item?.description }}</div>
                             </v-card-text>
 
                         </v-responsive>
@@ -87,7 +87,7 @@ export default {
 
             await httpService.get(`https://localhost:7280/api/ProgrammingLanguages/GetProgrammingUi`, null, { skip: (e - 1) * this.takeParam, take: this.takeParam }).then(serviceResponse => {
                 this.pageCount = serviceResponse.data.totalCount % this.takeParam > 0 ? (serviceResponse.data.totalCount / this.takeParam) + 1 : serviceResponse.data.totalCount / this.takeParam;
-                this.items = serviceResponse.data.data;
+                this.items = serviceResponse?.data?.data;
             }).catch(err => {
                 this.$root.Notify.show({
                     delay: 3000,

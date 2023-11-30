@@ -32,7 +32,7 @@ export default {
             window.open('https://www.linkedin.com/in/saruhan75/');
         },
         clkGithub(){
-            window.open('https://github.com/SaruGit75');
+            window.open('https://github.com/saruhansenturk');
         },
         clkStack(){
             window.open('https://stackoverflow.com/users/15012872/saruhan');
