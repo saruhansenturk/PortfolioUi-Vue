@@ -10,11 +10,35 @@
             </v-col>
             <v-col>
                 <!-- <v-btn-group> -->
-                <v-btn rounded="xl" elevation="16" icon="mdi-github" @click="clkGithub"/> |
-                <v-btn rounded="xl" elevation="16" icon="mdi-stack-overflow" @click="clkStack"/> |
-                <v-btn rounded="xl" elevation="16" icon="mdi-linkedin" @click="clkLinkedin" /> |
-                <v-btn rounded="xl" elevation="16" icon="mdi-instagram" @click="clkInsta"/>
-                <!-- </v-btn-group> -->
+                <v-tooltip text="GitHub" location="top">
+                    <template v-slot:activator="{ props }">
+                        <v-btn rounded="xl" v-bind="props" elevation="16" icon="mdi-github" @click="clkGithub" />
+                    </template>
+                </v-tooltip>
+                |
+                <v-tooltip text="StackOverFlow" location="top">
+                    <template v-slot:activator="{ props }">
+                        <v-btn rounded="xl" v-bind="props" elevation="16" icon="mdi-stack-overflow" @click="clkStack" />
+                    </template>
+                </v-tooltip>
+                |
+                <v-tooltip text="LinkedIn" location="top">
+                    <template v-slot:activator="{ props }">
+                        <v-btn rounded="xl" v-bind="props" elevation="16" icon="mdi-linkedin" @click="clkLinkedin" />
+                    </template>
+                </v-tooltip>
+                |
+                <v-tooltip text="Instagram" location="top">
+                    <template v-slot:activator="{ props }">
+                        <v-btn rounded="xl" v-bind="props" elevation="16" icon="mdi-instagram" @click="clkInsta" />
+                    </template>
+                </v-tooltip>
+                |
+                <v-tooltip text="Medium" location="top">
+                    <template v-slot:activator="{ props }">
+                        <v-btn rounded="xl" v-bind="props" elevation="16" icon="mdi-alpha-m-box" @click="clkMedium" />
+                    </template>
+                </v-tooltip>
             </v-col>
         </div>
     </v-footer>
@@ -31,14 +55,17 @@ export default {
         clkLinkedin() {
             window.open('https://www.linkedin.com/in/saruhan75/');
         },
-        clkGithub(){
+        clkGithub() {
             window.open('https://github.com/saruhansenturk');
         },
-        clkStack(){
+        clkStack() {
             window.open('https://stackoverflow.com/users/15012872/saruhan');
         },
-        clkInsta(){
+        clkInsta() {
             window.open('https://www.instagram.com/saruhan_75/');
+        },
+        clkMedium() {
+            window.open('https://medium.com/@saru75');
         }
     },
     mounted() { },

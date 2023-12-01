@@ -3,9 +3,9 @@
         <v-row>
             <v-col v-for="(item, i) in items" :key="i">
                 <v-hover v-slot="{ isHovering, props }">
-                    <v-card class="mx-auto" max-width="300" min-width="200" :elevation="isHovering ? 24 : 2" v-bind="props">
+                    <v-card class="mx-auto" max-width="240" min-width="100" :elevation="isHovering ? 24 : 2" v-bind="props">
                         <v-responsive>
-                            <v-img class="align-end text-white" height="200" :src="item?.languageImg" cover>
+                            <v-img class="align-end text-white" height="240" width="240" :src="item?.languageImg" cover>
                             </v-img>
                             <v-card-title>
                                 <v-chip color="green">
