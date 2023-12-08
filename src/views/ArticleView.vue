@@ -24,7 +24,8 @@ export default {
         async loadArticle(id) {
             if (id !== undefined) {
                 var response = await httpService.get(`https://localhost:7280/api/Articles`, null, { id: id });
-                this.content = response.data.data.introduction;
+                this.content = response.data.data.introduction + response.data.data.body + response.data.data.conclusion;
+
             }
         }
     }
