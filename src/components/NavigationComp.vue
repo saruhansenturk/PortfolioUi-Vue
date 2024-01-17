@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer v-model="drawer" style="background-color: #2D2424">
+    <v-navigation-drawer v-model="drawer" style="background-color: #526D82">
         <v-hover>
             <template v-slot:default="{ isHovering, props }">
                 <v-card class="rounded-xl" v-bind="props" :elevation="isHovering ? 24 : 5" to="/">
@@ -100,7 +100,7 @@ export default {
     bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #5C3D2E;
+    background-color: #27374D;
 }
 </style>
 

@@ -58,9 +58,9 @@ export default {
         };
     },
     async created() {
-        this.$root.Loader.toggle({
-            isShow: true
-        });
+        // this.$root.Loader.toggle({
+        //     isShow: true
+        // });
 
         await httpService.get(`https://localhost:7280/api/ProgrammingLangTechs/GetProgrammingTechUi`, null, { skip: this.skipParam, take: this.takeParam }).then(serviceResponse => {
             this.pageCount = serviceResponse.data.totalCount % this.takeParam > 0 ? (serviceResponse.data.totalCount / this.takeParam) + 1 : serviceResponse.data.totalCount / this.takeParam;
@@ -73,9 +73,9 @@ export default {
             });
         });
 
-        this.$root.Loader.toggle({
-            isShow: false
-        });
+        // this.$root.Loader.toggle({
+        //     isShow: false
+        // });
     },
     methods: {
         async pageChanged(e) {
@@ -84,8 +84,16 @@ export default {
             });
 
             await httpService.get(`https://localhost:7280/api/ProgrammingLangTechs/GetProgrammingTechUi`, null, { skip: (e - 1) * this.takeParam, take: this.takeParam }).then(serviceResponse => {
-                this.pageCount = serviceResponse.data.totalCount % this.takeParam > 0 ? (serviceResponse.data.totalCount / this.takeParam) + 1 : serviceResponse.data.totalCount / this.takeParam;
-                this.items = serviceResponse.data.data;
+
+                setTimeout(() => {
+                    this.$root.Loader.toggle({
+                        isShow: false
+                    });
+
+                    this.pageCount = serviceResponse.data.totalCount % this.takeParam > 0 ? (serviceResponse.data.totalCount / this.takeParam) + 1 : serviceResponse.data.totalCount / this.takeParam;
+                    this.items = serviceResponse.data.data;
+                }, 1000);
+
             }).catch(err => {
                 this.$root.Notify.show({
                     delay: 3000,
@@ -94,12 +102,8 @@ export default {
                 });
             });
 
-            this.$root.Loader.toggle({
-                isShow: false
-            });
         }
     },
-    mounted() { },
 };
 </script>
 <style scoped></style>
