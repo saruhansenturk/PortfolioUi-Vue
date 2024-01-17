@@ -1,6 +1,6 @@
 <template>
     <v-footer class="d-flex flex-column align-content-end sticky-footer">
-        <div class="text-center w-100" style="background-color: #5C3D2E;">
+        <div class="text-center w-100" style="background-color: #27374D;">
             <v-col>
                 <small class="text-start font-weight-thin" id="smFooter"> {{ new Date().getFullYear() }} — Designed &
                     developed by

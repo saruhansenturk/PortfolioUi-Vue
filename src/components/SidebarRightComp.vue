@@ -1,7 +1,7 @@
 <template>
     <!-- <v-card height="100%">
         <v-layout full-height> -->
-    <v-navigation-drawer location="right" width="250" style="background-color: #2D2424">
+    <v-navigation-drawer location="right" width="250" style="background-color: #526D82">
 
         <v-list nav>
             <!-- <v-list-item prepend-icon="mdi-email" value="inbox" to="/home">
@@ -15,9 +15,9 @@
         </v-list>
         <v-container>
             <v-row>
-                <v-sheet color="#5C3D2E" rounded="lg" width="100%" elevation="24" class="mx-auto pa-4 text-center"
+                <v-sheet color="#27374D" rounded="lg" width="100%" elevation="24" class="mx-auto pa-4 text-center"
                     height="auto">
-                    <v-icon class="mb-5" color="#2D2424" icon="mdi-notebook-plus" size="85"></v-icon>
+                    <v-icon class="mb-5" color="#526D82" icon="mdi-notebook-plus" size="85"></v-icon>
                     <v-chip-group variant="tonal" mandatory color="blue">
                         <v-chip v-for="tag in tags" :key="tag" @click="chipClick(tag.id)" :item-id="tag.id">
                             {{ tag.articleName }}
@@ -79,6 +79,6 @@ export default {
     bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #5C3D2E;
+    background-color: #27374D;
 }
 </style>

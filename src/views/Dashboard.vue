@@ -3,7 +3,7 @@
 
   <sidebar-right-comp v-model="drawerRight" @itememit="getItemId" />
 
-  <v-app-bar color="#5C3D2E" dark :style="{ zIndex: 1 }" scroll-behavior="elevate">
+  <v-app-bar color="#27374D" dark :style="{ zIndex: 1 }" scroll-behavior="elevate">
     <v-app-bar-nav-icon @click="toggleNav()" fixed>
     </v-app-bar-nav-icon>
 
@@ -18,7 +18,7 @@
       <v-row>
 
         <v-col>
-          <router-view style="border: 5px black solid; background-color: #B85C38; color: black; padding: 20px;">
+          <router-view style="border: 3px black solid; background-color: #9DB2BF; color: black; padding: 20px;">
           </router-view>
         </v-col>
 
